@@ -31,7 +31,7 @@ The configuration file can be edited by following command; </br>
 **Default contents of config file**</br>
 This can be changed by editing config file</br>
 You can add extra arguments, one per line starting with `--` </br>
-</br></br>
+
 ```
 --beast 30005
 --msg 30003
