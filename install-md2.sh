@@ -4,7 +4,7 @@ INSTALL_FOLDER=/usr/share/md2
 
 echo "Creating folder md2"
 sudo mkdir ${INSTALL_FOLDER}
-echo "Downloading modeSDecoder2 file from Google Drive"
+echo "Downloading modeSDeco2 file from Google Drive"
 sudo wget -O ${INSTALL_FOLDER}/modesdeco2_rpi2-3_deb9_20180729.tgz "https://drive.google.com/uc?export=download&id=1WhheW-I4_1sb3VUXa9bcs8XEkh9fn_Lh" 
 
 
@@ -44,7 +44,7 @@ sudo chmod 777 ${SERVICE_FILE}
 /bin/cat <<EOM >${SERVICE_FILE}
 # modesdeco2 service for systemd
 [Unit]
-Description=ModeSDecoder2
+Description=ModeSDeco2
 Wants=network.target
 After=network.target
 [Service]
