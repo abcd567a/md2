@@ -64,7 +64,7 @@ EOM
 
 sudo chmod 744 ${SERVICE_FILE}
 sudo systemctl enable md2
-sudo systemctl restart md2
+sudo systemctl start md2
 
 echo " "
 echo " "
@@ -79,6 +79,9 @@ echo -e "\e[33mreplace xx.xxxx and yy.yyyy \e[39m"
 echo -e "\e[33mby your actual latitude and longitude \e[39m"
 echo -e "\e[33min following line:\e[39m"
 echo -e "\e[39m --location xx.xxxx:yy.yyyy  \e[39m"
+echo -e "\e[33mAfter entering location, Save (Ctrl+o) and Close (Ctrl+x) file md2.conf \e[39m"
+echo -e "\e[33mthen restart md2 by following command:\e[39m"
+echo -e "\e[39msudo systemctl restart md2 \e[39m"
 echo " "
 echo -e "\e[32mWeb interface at\e[39m http://$(ip route | grep -m1 -o -P 'src \K[0-9,.]*'):8787"
 echo " "
