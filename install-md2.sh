@@ -33,7 +33,7 @@ echo "Writing code to config file md2.conf"
 --beast 30005
 --msg 30003
 --web 8787
---location xx.xxxx:yy.yyyy
+
 EOM
 sudo chmod 644 ${CONFIG_FILE}
 
@@ -75,10 +75,10 @@ echo -e "\e[32m=======================\e[39m"
 echo -e "\e[32mPLEASE DO FOLLOWING:\e[39m"
 echo -e "\e[33mOpen file md2.conf for editing by following command:\e[39m"
 echo -e "\e[39msudo nano "${INSTALL_FOLDER}"/md2.conf \e[39m"
-echo -e "\e[33mreplace xx.xxxx and yy.yyyy \e[39m"
-echo -e "\e[33mby your actual latitude and longitude \e[39m"
-echo -e "\e[33min following line:\e[39m"
+echo -e "\e[33mAdd following line:\e[39m"
 echo -e "\e[39m --location xx.xxxx:yy.yyyy  \e[39m"
+echo -e "\e[33m(Replace xx.xxxx and yy.yyyy \e[39m"
+echo -e "\e[33mby your actual latitude and longitude) \e[39m"
 echo -e "\e[33mAfter entering location, Save (Ctrl+o) and Close (Ctrl+x) file md2.conf \e[39m"
 echo -e "\e[33mthen restart md2 by following command:\e[39m"
 echo -e "\e[39msudo systemctl restart md2 \e[39m"
