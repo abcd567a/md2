@@ -15,10 +15,13 @@ PLEASE DO FOLLOWING:
 (1) In your browser, go to web interface at http://ip-of-pi:8787
 
 (2) Open file md2.conf for editing by following command:
+
 sudo nano /usr/share/md2/md2.conf
+
 Add following line:
 
- --location xx.xxxx:yy.yyyy
+--location xx.xxxx:yy.yyyy
+
 (Replace xx.xxxx and yy.yyyy
 by your actual latitude and longitude)
 
