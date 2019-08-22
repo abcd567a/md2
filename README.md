@@ -13,10 +13,10 @@ INSTALLATION COMPLETED
 PLEASE DO FOLLOWING:
 Open file md2.conf for editing by following command:
 sudo nano /usr/share/md2/md2.conf
-replace xx.xxxx and yy.yyyy
-by your actual latitude and longitude
-in following line:
---location xx.xxxx:yy.yyyy
+Add following line:
+ --location xx.xxxx:yy.yyyy
+(Replace xx.xxxx and yy.yyyy
+by your actual latitude and longitude)
 After entering location, Save (Ctrl+o) and Close (Ctrl+x) file md2.conf
 then restart md2 by following command:
 sudo systemctl restart md2
@@ -39,5 +39,5 @@ You can add extra arguments, one per line starting with `--` </br>
 --beast 30005
 --msg 30003
 --web 8787
---location xx.xxxx:yy.yyyy
+
 ```
