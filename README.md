@@ -7,21 +7,26 @@ Copy-paste following command in SSH console and press Enter key. The script will
 `sudo bash -c "$(wget -O - https://raw.githubusercontent.com/abcd567a/md2/master/install-md2.sh)" `</br></br>
 After script finishes, it displays following message
 ```
-=======================
+
 INSTALLATION COMPLETED
 =======================
 PLEASE DO FOLLOWING:
-Open file md2.conf for editing by following command:
+=======================
+(1) In your browser, go to web interface at http://ip-of-pi:8787
+
+(2) Open file md2.conf for editing by following command:
 sudo nano /usr/share/md2/md2.conf
 Add following line:
+
  --location xx.xxxx:yy.yyyy
 (Replace xx.xxxx and yy.yyyy
 by your actual latitude and longitude)
+
 After entering location, Save (Ctrl+o) and Close (Ctrl+x) file md2.conf
 then restart md2 by following command:
+
 sudo systemctl restart md2
 
-Web interface at http://ip-of-pi:8787
 
 To see status sudo systemctl status md2
 To restart    sudo systemctl restart md2
