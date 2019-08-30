@@ -32,7 +32,7 @@ echo "Writing code to config file md2.conf"
 /bin/cat <<EOM >${CONFIG_FILE}
 --beast 30005
 --msg 30003
---web 8787
+--web 8585
 
 EOM
 sudo chmod 644 ${CONFIG_FILE}
@@ -74,7 +74,7 @@ echo -e "\e[32mPLEASE DO FOLLOWING:\e[39m"
 echo -e "\e[32m=======================\e[39m"
 echo ""
 echo -e "\e[32m(1) In your browser, go to Web interface at\e[39m"
-echo -e "\e[39m     http://$(ip route | grep -m1 -o -P 'src \K[0-9,.]*'):8787 \e[39m"
+echo -e "\e[39m     http://$(ip route | grep -m1 -o -P 'src \K[0-9,.]*'):8585 \e[39m"
 echo " "
 echo -e "\e[33m(2) Open file md2.conf by following command:\e[39m"
 echo -e "\e[39m     sudo nano "${INSTALL_FOLDER}"/md2.conf \e[39m"
