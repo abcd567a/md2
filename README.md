@@ -12,7 +12,7 @@ INSTALLATION COMPLETED
 =======================
 PLEASE DO FOLLOWING:
 =======================
-(1) In your browser, go to web interface at http://ip-of-pi:8787
+(1) In your browser, go to web interface at http://ip-of-pi:8585
 
 (2) Open file md2.conf for editing by following command:
 
@@ -46,6 +46,6 @@ You can add extra arguments, one per line starting with `--` </br>
 ```
 --beast 30005
 --msg 30003
---web 8787
+--web 8585
 
 ```
