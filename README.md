@@ -49,3 +49,12 @@ You can add extra arguments, one per line starting with `--` </br>
 --web 8585
 
 ```
+
+### UNINSTALL </br>
+To completely remove configuration and all files, give following 4 commands:
+```
+sudo systemctl stop md2 
+sudo systemctl disable md2 
+sudo rm /lib/systemd/system/md2.service 
+sudo rm -rf /usr/share/md2 
+```
