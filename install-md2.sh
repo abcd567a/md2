@@ -11,6 +11,9 @@ sudo wget -O ${INSTALL_FOLDER}/modesdeco2_rpi2-3_deb9_20180729.tgz "https://driv
 echo "Unzipping downloaded file"
 sudo tar xvzf ${INSTALL_FOLDER}/modesdeco2_rpi2-3_deb9_20180729.tgz -C ${INSTALL_FOLDER}
 
+echo "Creating symlink to modesmixer2 binary in folder /usr/bin/ "
+sudo ln -s ${INSTALL_FOLDER}/modesdeco2 /usr/bin/modesdeco2
+
 echo "Creating startup script file md2-start.sh"
 SCRIPT_FILE=${INSTALL_FOLDER}/md2-start.sh
 sudo touch ${SCRIPT_FILE}
