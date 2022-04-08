@@ -41,6 +41,12 @@ echo "Writing code to config file md2.conf"
 EOM
 sudo chmod 644 ${CONFIG_FILE}
 
+echo "Creating User md2 to run modesdeco2"
+sudo useradd --system md2
+
+echo "Assigning ownership of install folder to user md2"
+sudo chown md2:md2 -R ${INSTALL_FOLDER}
+
 echo "Creating Service file md2.service"
 SERVICE_FILE=/lib/systemd/system/md2.service
 sudo touch ${SERVICE_FILE}
@@ -52,6 +58,7 @@ Description=ModeSDeco2
 Wants=network.target
 After=network.target
 [Service]
+User=md2
 RuntimeDirectory=modesdeco2
 RuntimeDirectoryMode=0755
 ExecStart=/bin/bash ${INSTALL_FOLDER}/md2-start.sh
