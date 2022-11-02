@@ -4,7 +4,7 @@
 </br>
 
 Copy-paste following command in SSH console and press Enter key. The script will install and configure modesdecoder2. </br></br>
-`sudo bash -c "$(wget -O - https://raw.githubusercontent.com/abcd567a/md2/master/install-md2.sh)" `</br></br>
+`sudo bash -c "$(wget -O - https://github.com/abcd567a/md2/raw/master/install-md2.sh)" `</br></br>
 After script finishes, it displays following message
 ```
 
