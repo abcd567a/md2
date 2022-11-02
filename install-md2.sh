@@ -6,11 +6,13 @@ echo "Creating folder md2"
 sudo mkdir ${INSTALL_FOLDER}
 echo "Downloading modeSDeco2 file from Github"
 #sudo wget -O ${INSTALL_FOLDER}/modesdeco2_rpi2-3_deb9_20180729.tgz "https://drive.google.com/uc?export=download&id=1WhheW-I4_1sb3VUXa9bcs8XEkh9fn_Lh" 
-sudo wget -O ${INSTALL_FOLDER}/modesdeco2_rpi_20150321.tgz "https://github.com/abcd567a/md2/releases/download/v1/modesdeco2_rpi_20150321.tgz" 
+#sudo wget -O ${INSTALL_FOLDER}/modesdeco2_rpi_20150321.tgz "https://github.com/abcd567a/md2/releases/download/v1/modesdeco2_rpi_20150321.tgz" 
+sudo wget -O ${INSTALL_FOLDER}/modesdeco2_rpi2-3_deb9_20180729.tgz "https://github.com/abcd567a/md2/releases/download/v1/modesdeco2_rpi2-3_deb9_20180729.tgz" 
 
 echo "Unzipping downloaded file"
 #sudo tar xvzf ${INSTALL_FOLDER}/modesdeco2_rpi2-3_deb9_20180729.tgz -C ${INSTALL_FOLDER}
-sudo tar xvzf ${INSTALL_FOLDER}/modesdeco2_rpi_20150321.tgz -C ${INSTALL_FOLDER}
+#sudo tar xvzf ${INSTALL_FOLDER}/modesdeco2_rpi_20150321.tgz -C ${INSTALL_FOLDER}
+sudo tar xvzf ${INSTALL_FOLDER}/modesdeco2_rpi2-3_deb9_20180729.tgz -C ${INSTALL_FOLDER}
 
 echo "Creating symlink to modesdeco2 binary in folder /usr/bin/ "
 sudo ln -s ${INSTALL_FOLDER}/modesdeco2 /usr/bin/modesdeco2
