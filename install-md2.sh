@@ -38,6 +38,7 @@ echo "Writing code to config file md2.conf"
 /bin/cat <<EOM >${CONFIG_FILE}
 --beast 30005
 --msg 30003
+--avr 30002
 --web 8585
 
 EOM
