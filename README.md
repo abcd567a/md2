@@ -1,5 +1,5 @@
 # md2
-### ModeSDeco2 installation script for RPi 2/3/4 and Raspbian Stretch/Buster
+### ModeSDeco2 installation script for RPi 2/3/4 and Raspbian Stretch/Buster/Bullseye
 
 </br>
 
