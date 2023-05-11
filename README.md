@@ -64,5 +64,6 @@ sudo systemctl stop md2
 sudo systemctl disable md2 
 sudo rm /lib/systemd/system/md2.service 
 sudo rm -rf /usr/share/md2 
-sudo rm /usr/bin/modesdeco2
+sudo rm /usr/bin/modesdeco2  
+sudo userdel md2  
 ```
