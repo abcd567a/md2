@@ -45,6 +45,7 @@ sudo chmod 644 ${CONFIG_FILE}
 
 echo "Creating User md2 to run modesdeco2"
 sudo useradd --system md2
+sudo usermod -a -G plugdev md2
 
 echo "Assigning ownership of install folder to user md2"
 sudo chown md2:md2 -R ${INSTALL_FOLDER}
