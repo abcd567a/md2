@@ -2,6 +2,16 @@
 VERSION=modesdeco2_rpi2-3_deb9_20180729
 INSTALL_FOLDER=/usr/share/md2
 
+echo -e "\e[1;32mAdding architecture armhf\e[39m"
+sudo dpkg --add-architecture armhf
+echo -e "\e[1;32m....UPDATING....\e[39m"
+sleep 3
+sudo apt update
+echo -e "\e[1;32m...INSTALLING DEPENDENCY PACKAGES\e[2;39m"
+sleep 3
+sudo apt install -y libssl1.1:armhf
+sudo apt install -y libstdc++6:armhf
+
 echo "Creating folder md2"
 sudo mkdir ${INSTALL_FOLDER}
 echo "Downloading modeSDeco2 file from Github"
@@ -106,5 +116,9 @@ echo " "
 echo -e "\e[32mTo see status\e[39m sudo systemctl status md2"
 echo -e "\e[32mTo restart\e[39m    sudo systemctl restart md2"
 echo -e "\e[32mTo stop\e[39m       sudo systemctl stop md2"
-
+echo ""
+echo -e "\e[1;31mIf status shows \"Error: sdr_open(): Device or resource busy\", then \e[39m"
+echo -e "\e[1;32m    (1) Unplug and re-plug the Dongle \e[39m"
+echo -e "\e[1;32m    (2) REBOOT Pi \e[2;39m"
+echo ""
 
