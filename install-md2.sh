@@ -2,19 +2,20 @@
 VERSION=modesdeco2_rpi2-3_deb9_20180729
 INSTALL_FOLDER=/usr/share/md2
 
-echo -e "\e[1;32mAdding architecture armhf\e[39m"
+echo -e "\e[1;32m...ADDING ARCHITECTURE armhf ...\e[39m"
+sleep 2
 sudo dpkg --add-architecture armhf
-echo -e "\e[1;32m....UPDATING....\e[39m"
-sleep 3
+echo -e "\e[1;32m...UPDATING ... \e[39m"
+sleep 2
 sudo apt update
-echo -e "\e[1;32m...INSTALLING DEPENDENCY PACKAGES\e[39m"
-echo -e "\e[1;32m...Installing dependency 1 of 3 (libssl1.1:armhf) \e[39m"
+echo -e "\e[1;32m...INSTALLING DEPENDENCY PACKAGES ... \e[39m"
+echo -e "\e[1;32m...INSTALLING DEPENDENCY 1 of 3 (libssl1.1:armhf) ... \e[39m"
 sleep 2
 sudo apt install -y libssl1.1:armhf
-echo -e "\e[1;32m...Installing dependency 2 of 3 (libstdc++6:armhf) \e[39m"
+echo -e "\e[1;32m...INSTALLING DEPENDENCY 2 of 3 (libstdc++6:armhf) ... \e[39m"
 sleep 2
 sudo apt install -y libstdc++6:armhf
-echo -e "\e[1;32m...Installing dependency 3 of 3 (libudev-dev:armhf) \e[39m"
+echo -e "\e[1;32m...INSTALLING DEPENDENCY 3 of 3 (libudev-dev:armhf) ... \e[39m"
 sleep 2
 sudo apt install -y libudev-dev:armhf
 
