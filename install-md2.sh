@@ -11,6 +11,7 @@ echo -e "\e[1;32m...INSTALLING DEPENDENCY PACKAGES\e[2;39m"
 sleep 3
 sudo apt install -y libssl1.1:armhf
 sudo apt install -y libstdc++6:armhf
+sudo apt install -y libudev-dev:armhf
 
 echo "Creating folder md2"
 sudo mkdir ${INSTALL_FOLDER}
