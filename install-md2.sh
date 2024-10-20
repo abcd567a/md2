@@ -34,6 +34,9 @@ sudo tar xvzf ${INSTALL_FOLDER}/${VERSION}.tgz -C ${INSTALL_FOLDER}
 echo "Creating symlink to modesdeco2 binary in folder /usr/bin/ "
 sudo ln -s ${INSTALL_FOLDER}/modesdeco2 /usr/bin/modesdeco2
 
+echo "Downloading & installing rtl-sdr.rules file from Github ..."
+sudo wget -O /etc/udev/rules.d/rtl-sdr.rules "https://raw.githubusercontent.com/abcd567a/md2/refs/heads/master/rtl-sdr.rules"
+
 echo "Creating startup script file md2-start.sh"
 SCRIPT_FILE=${INSTALL_FOLDER}/md2-start.sh
 sudo touch ${SCRIPT_FILE}
