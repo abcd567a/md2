@@ -8,9 +8,14 @@ echo -e "\e[1;32m....UPDATING....\e[39m"
 sleep 3
 sudo apt update
 echo -e "\e[1;32m...INSTALLING DEPENDENCY PACKAGES\e[2;39m"
-sleep 3
+echo -e "\e[1;32m...Installing dependency 1 of 3 (libssl1.1:armhf) \e[2;39m"
+sleep 2
 sudo apt install -y libssl1.1:armhf
+echo -e "\e[1;32m...Installing dependency 2 of 3 (libstdc++6:armhf) \e[2;39m"
+sleep 2
 sudo apt install -y libstdc++6:armhf
+echo -e "\e[1;32m...Installing dependency 3 of 3 (libudev-dev:armhf) \e[2;39m"
+sleep 2
 sudo apt install -y libudev-dev:armhf
 
 echo "Creating folder md2"
