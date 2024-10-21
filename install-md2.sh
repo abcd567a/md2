@@ -1,6 +1,8 @@
 #!/bin/bash
 VERSION=modesdeco2_rpi2-3_deb9_20180729
 INSTALL_FOLDER=/usr/share/md2
+echo "Creating install folder md2"
+sudo mkdir ${INSTALL_FOLDER}
 
 echo -e "\e[1;32m...ADDING ARCHITECTURE armhf ...\e[39m"
 sleep 2
@@ -21,8 +23,6 @@ echo -e "\e[1;32m...INSTALLING DEPENDENCY 3 of 3 (libudev-dev:armhf) ... \e[39m"
 sleep 2
 sudo apt install -y libudev-dev:armhf
 
-echo "Creating folder md2"
-sudo mkdir ${INSTALL_FOLDER}
 echo "Downloading modeSDeco2 file from Github"
 #sudo wget -O ${INSTALL_FOLDER}/modesdeco2_rpi2-3_deb9_20180729.tgz "https://drive.google.com/uc?export=download&id=1WhheW-I4_1sb3VUXa9bcs8XEkh9fn_Lh" 
 #sudo wget -O ${INSTALL_FOLDER}/modesdeco2_rpi_20150321.tgz "https://github.com/abcd567a/md2/releases/download/v1/modesdeco2_rpi_20150321.tgz" 
