@@ -2,48 +2,44 @@
 VERSION=modesdeco2_rpi2-3_deb9_20180729
 INSTALL_FOLDER=/usr/share/md2
 echo "Creating install folder md2"
-sudo mkdir ${INSTALL_FOLDER}
+mkdir ${INSTALL_FOLDER}
 
 echo -e "\e[1;32m...ADDING ARCHITECTURE armhf ...\e[39m"
 sleep 2
-sudo dpkg --add-architecture armhf
+dpkg --add-architecture armhf
 echo -e "\e[1;32m...UPDATING ... \e[39m"
 sleep 2
-sudo apt update
+apt update
 echo -e "\e[1;32m...INSTALLING DEPENDENCY PACKAGES ... \e[39m"
 echo -e "\e[1;32m...INSTALLING DEPENDENCY 1 of 3 (libssl1.1:armhf) ... \e[39m"
 sleep 2
-sudo apt install -y libssl1.1:armhf
+apt install -y libssl1.1:armhf
 wget -O ${INSTALL_FOLDER}/libssl1.1_1.1.1w-0+deb11u1_armhf.deb http://http.us.debian.org/debian/pool/main/o/openssl/libssl1.1_1.1.1w-0+deb11u1_armhf.deb
 apt install -y ${INSTALL_FOLDER}/libssl1.1_1.1.1w-0+deb11u1_armhf.deb
 
 echo -e "\e[1;32m...INSTALLING DEPENDENCY 2 of 3 (libstdc++6:armhf) ... \e[39m"
 sleep 2
-sudo apt install -y libstdc++6:armhf
+apt install -y libstdc++6:armhf
 echo -e "\e[1;32m...INSTALLING DEPENDENCY 3 of 3 (libudev-dev:armhf) ... \e[39m"
 sleep 2
-sudo apt install -y libudev-dev:armhf
+apt install -y libudev-dev:armhf
 
 echo "Downloading modeSDeco2 file from Github"
-#sudo wget -O ${INSTALL_FOLDER}/modesdeco2_rpi2-3_deb9_20180729.tgz "https://drive.google.com/uc?export=download&id=1WhheW-I4_1sb3VUXa9bcs8XEkh9fn_Lh" 
-#sudo wget -O ${INSTALL_FOLDER}/modesdeco2_rpi_20150321.tgz "https://github.com/abcd567a/md2/releases/download/v1/modesdeco2_rpi_20150321.tgz" 
-sudo wget -O ${INSTALL_FOLDER}/${VERSION}.tgz "https://github.com/abcd567a/md2/releases/download/v1/${VERSION}.tgz" 
+wget -O ${INSTALL_FOLDER}/${VERSION}.tgz "https://github.com/abcd567a/md2/releases/download/v1/${VERSION}.tgz" 
 
 echo "Unzipping downloaded file"
-#sudo tar xvzf ${INSTALL_FOLDER}/modesdeco2_rpi2-3_deb9_20180729.tgz -C ${INSTALL_FOLDER}
-#sudo tar xvzf ${INSTALL_FOLDER}/modesdeco2_rpi_20150321.tgz -C ${INSTALL_FOLDER}
-sudo tar xvzf ${INSTALL_FOLDER}/${VERSION}.tgz -C ${INSTALL_FOLDER}
+tar xvzf ${INSTALL_FOLDER}/${VERSION}.tgz -C ${INSTALL_FOLDER}
 
 echo "Creating symlink to modesdeco2 binary in folder /usr/bin/ "
-sudo ln -s ${INSTALL_FOLDER}/modesdeco2 /usr/bin/modesdeco2
+ln -s ${INSTALL_FOLDER}/modesdeco2 /usr/bin/modesdeco2
 
 echo "Downloading & installing rtl-sdr.rules file from Github ..."
-sudo wget -O /etc/udev/rules.d/rtl-sdr.rules "https://raw.githubusercontent.com/abcd567a/md2/refs/heads/master/rtl-sdr.rules"
+wget -O /etc/udev/rules.d/rtl-sdr.rules "https://raw.githubusercontent.com/abcd567a/md2/refs/heads/master/rtl-sdr.rules"
 
 echo "Creating startup script file md2-start.sh"
 SCRIPT_FILE=${INSTALL_FOLDER}/md2-start.sh
-sudo touch ${SCRIPT_FILE}
-sudo chmod 777 ${SCRIPT_FILE}
+touch ${SCRIPT_FILE}
+chmod 777 ${SCRIPT_FILE}
 echo "Writing code to startup script file md2-start.sh"
 /bin/cat <<EOM >${SCRIPT_FILE}
 #!/bin/sh
@@ -51,12 +47,12 @@ CONFIG=""
 while read -r line; do CONFIG="\${CONFIG} \$line"; done < ${INSTALL_FOLDER}/md2.conf
 ${INSTALL_FOLDER}/modesdeco2 \${CONFIG}
 EOM
-sudo chmod +x ${SCRIPT_FILE}
+chmod +x ${SCRIPT_FILE}
 
 echo "Creating config file md2.conf"
 CONFIG_FILE=${INSTALL_FOLDER}/md2.conf
-sudo touch ${CONFIG_FILE}
-sudo chmod 777 ${CONFIG_FILE}
+touch ${CONFIG_FILE}
+chmod 777 ${CONFIG_FILE}
 echo "Writing code to config file md2.conf"
 /bin/cat <<EOM >${CONFIG_FILE}
 --beast 30005
@@ -65,19 +61,19 @@ echo "Writing code to config file md2.conf"
 --web 8585
 
 EOM
-sudo chmod 644 ${CONFIG_FILE}
+chmod 644 ${CONFIG_FILE}
 
 echo "Creating User md2 to run modesdeco2"
-sudo useradd --system md2
-sudo usermod -a -G plugdev md2
+useradd --system md2
+usermod -a -G plugdev md2
 
 echo "Assigning ownership of install folder to user md2"
-sudo chown md2:md2 -R ${INSTALL_FOLDER}
+chown md2:md2 -R ${INSTALL_FOLDER}
 
 echo "Creating Service file md2.service"
 SERVICE_FILE=/lib/systemd/system/md2.service
-sudo touch ${SERVICE_FILE}
-sudo chmod 777 ${SERVICE_FILE}
+touch ${SERVICE_FILE}
+chmod 777 ${SERVICE_FILE}
 /bin/cat <<EOM >${SERVICE_FILE}
 # modesdeco2 service for systemd
 [Unit]
@@ -100,26 +96,26 @@ WantedBy=default.target
 
 EOM
 
-sudo chmod 744 ${SERVICE_FILE}
-sudo systemctl enable md2
+chmod 744 ${SERVICE_FILE}
+systemctl enable md2
 
 echo "Creating blacklist-rtl-sdr file..."
 BLACKLIST_FILE=/etc/modprobe.d/blacklist-rtl-sdr.conf
-sudo touch ${BLACKLIST_FILE}
-sudo chmod 777 ${BLACKLIST_FILE}
+touch ${BLACKLIST_FILE}
+chmod 777 ${BLACKLIST_FILE}
 echo "Writing code to blacklist file"
 /bin/cat <<EOM >${BLACKLIST_FILE}
 blacklist rtl2832
 blacklist dvb_usb_rtl28xxu
 blacklist dvb_usb_v2,rtl2832
 EOM
-sudo chmod 644 ${BLACKLIST_FILE}
+chmod 644 ${BLACKLIST_FILE}
 
 echo "Unloading kernel drivers for rtl-sdr..."
-sudo rmmod rtl2832 dvb_usb_rtl28xxu dvb_usb_v2,rtl2832
+rmmod rtl2832 dvb_usb_rtl28xxu dvb_usb_v2,rtl2832
 
 echo "Starting  ModeSDeco2 ..."
-sudo systemctl start md2
+systemctl start md2
 
 echo " "
 echo " "
