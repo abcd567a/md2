@@ -7,7 +7,7 @@
 Copy-paste following command in SSH console and press Enter key. The script will install and configure modesdecoder2. </br></br>
 `sudo bash -c "$(wget -O - https://github.com/abcd567a/md2/raw/master/install-md2.sh)" `
 </br></br>
-**(1) For Ubuntu 18, 20, 22, & 24 AMD64 PC**
+**(1) For Ubuntu 18, 20, 22, & 24 on x86_64 / amd64 PC**
 </br>
 Copy-paste following command in SSH console and press Enter key. The script will install and configure modesdecoder2. </br></br>
 `sudo bash -c "$(wget -O - https://github.com/abcd567a/md2/raw/master/install-md2-ubuntu.sh)" `
