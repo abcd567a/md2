@@ -1,12 +1,18 @@
 ## md2
 #### To download </br>(1) dump1090-win (by Malcolm Robb) for running on Windows PC</br>(2) ModeSDeco2 for varios OS and architures,</br> click link below:</br>https://github.com/abcd567a/md2/releases/tag/v1
 
-### ModeSDeco2 installation script for RPi 2/3/4 and Raspbian Stretch/Buster/Bullseye
-
+### ModeSDeco2 installation scripts 
+**(1) For RPi 2/3/4 and Raspberry Pi OS Stretch/Buster/Bullseye/Bookworm**
 </br>
-
 Copy-paste following command in SSH console and press Enter key. The script will install and configure modesdecoder2. </br></br>
-`sudo bash -c "$(wget -O - https://github.com/abcd567a/md2/raw/master/install-md2.sh)" `</br></br>
+`sudo bash -c "$(wget -O - https://github.com/abcd567a/md2/raw/master/install-md2.sh)" `
+</br></br>
+**(1) For Ubuntu 18, 20, 22, & 24 AMD64 PC**
+</br>
+Copy-paste following command in SSH console and press Enter key. The script will install and configure modesdecoder2. </br></br>
+`sudo bash -c "$(wget -O - https://github.com/abcd567a/md2/raw/master/install-md2-ubuntu.sh)" `
+</br></br>
+
 After script finishes, it displays following message
 ```
 
