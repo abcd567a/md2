@@ -11,8 +11,11 @@ echo -e "\e[1;32m...INSTALLING DEPENDENCY PACKAGES ... \e[39m"
 echo -e "\e[1;32m...INSTALLING DEPENDENCY 1 of 4 (libssl1.1) ... \e[39m"
 sleep 2
 apt install -y libssl1.1
-wget -O ${INSTALL_FOLDER}/libssl1.1_1.1.1w-0+deb11u1_amd64.deb http://http.us.debian.org/debian/pool/main/o/openssl/libssl1.1_1.1.1w-0+deb11u1_amd64.deb
-apt install -y ${INSTALL_FOLDER}/libssl1.1_1.1.1w-0+deb11u1_amd64.deb
+
+if [[ ! `dpkg-query -W libssl1.1` ]]; then
+wget -O ${INSTALL_FOLDER}/libssl1.1_1.1.1w-0+deb11u1_amd64.deb "http://http.us.debian.org/debian/pool/main/o/openssl/libssl1.1_1.1.1w-0+deb11u1_amd64.deb";
+apt install -y ${INSTALL_FOLDER}/libssl1.1_1.1.1w-0+deb11u1_amd64.deb;
+fi
 
 echo -e "\e[1;32m...INSTALLING DEPENDENCY 2 of 4 (libstdc++6) ... \e[39m"
 sleep 2
@@ -146,6 +149,6 @@ echo -e "\e[32mTo stop\e[39m       sudo systemctl stop md2"
 echo ""
 echo -e "\e[1;31mIf status shows \"Error: sdr_open(): Device or resource busy\", then \e[39m"
 echo -e "\e[1;32m    (1) Unplug and re-plug the Dongle \e[39m"
-echo -e "\e[1;32m    (2) REBOOT Pi \e[39m"
+echo -e "\e[1;32m    (2) REBOOT COMPUTER \e[39m"
 echo ""
 
